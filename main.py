@@ -6,9 +6,12 @@ import os
 ASCII_CHARS = ['@', '#', 'S', '%', '?', '*', '+', ';', '@', ',', '.']
 # ASCII_CHARS = [".", ",", ":", ";", "+", "*", "?", "%", "S", "#", "@"]
 
-scale_factor = 0.1
+scale_factor = 0.2
 
 text = open("output.txt", 'w')
+
+def colored(r, g, b, text):
+    return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
 def gen_frame(image):
     width, height = image.size
@@ -23,7 +26,8 @@ def gen_frame(image):
             pixels[x, y] = (gray, gray, gray)
 
             percent = (gray / 255 * 100)
-            print(ASCII_CHARS[int(percent / len(ASCII_CHARS)) - 1], end='')
+            # print(ASCII_CHARS[int(percent / len(ASCII_CHARS)) - 1], end='')
+            print(colored(r, g, b, ASCII_CHARS[int(percent / len(ASCII_CHARS)) - 1]), end='')
             text.write(f"{ASCII_CHARS[int(percent / len(ASCII_CHARS)) - 1]}")
         print('')
         text.write('\n')
@@ -35,5 +39,5 @@ while True:
     ret, frame = cap.read()
     if input_1 == 'y': cv2.imshow('frame', frame)
     gen_frame(Image.fromarray(frame))
-    cv2.waitKey(10)
+    cv2.waitKey(1)
     os.system('cls')

@@ -1,19 +1,18 @@
 # ASCII Video Player
 
 ### About
-Video player running in the terminal using ASCII characters to display the video. **It works best when videos are black and white or if the background of the video is black or white.**
+Video player running in the terminal using ASCII characters to display the video and it can also play the video in color.
 
 ### What's ASCII?
- ASCII stands for "American Standard Code for Information Interchange". ASCII is a character encoding that is very common along computers. These codes represent text and symbols in computers.
+ASCII stands for "American Standard Code for Information Interchange". ASCII is a character encoding that is very common along computers. These codes represent text and symbols in computers.
 
 ### Features
-- comes with three video example which can be found in the `videos` folder
+- Comes with three video example which can be found in the `videos` folder
 - `output.txt` saves each frame ASCII data
-- able to have original video play in another window
-- Color test (not great right now)
+- Able to have original video play in another window
+- Color test (fixed)
 
 ### Issues
-- Colors needs work: The color function was made quick and the colors will most likly not be accurate.
 - Frame rate: the frame rate does not match up to video so the video may be slow
 
 ### "Bad Apple" (https://www.youtube.com/watch?v=FtutLA63Cp8)

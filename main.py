@@ -28,14 +28,12 @@ def gen_frame(image):
         print('')
         text.write('\n')
 
-cap = cv2.VideoCapture("videos/video.mp4")
+cap = cv2.VideoCapture(input("video file path: "))
+input_1 = input("show video in cv2 window? (y/n): ")
 
 while True:
     ret, frame = cap.read()
+    if input_1 == 'y': cv2.imshow('frame', frame)
     gen_frame(Image.fromarray(frame))
     cv2.waitKey(10)
     os.system('cls')
-
-
-# frame = Image.open("cameron.jpg")
-# gen_frame(image)
